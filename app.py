@@ -7,7 +7,7 @@ class InferlessPythonModel:
     def initialize(self):
         config = PeftConfig.from_pretrained("G-ML-Hyly/stg-cli13b-t6-cdp-ca.mt.him.cln.inter-b4s1e1-20231219-1611")
         self.model = AutoModelForCausalLM.from_pretrained("codellama/CodeLlama-13b-Instruct-hf")
-        self.model = PeftModel.from_pretrained(model, "G-ML-Hyly/stg-cli13b-t6-cdp-ca.mt.him.cln.inter-b4s1e1-20231219-1611")
+        self.model = PeftModel.from_pretrained(self.model, "G-ML-Hyly/stg-cli13b-t6-cdp-ca.mt.him.cln.inter-b4s1e1-20231219-1611")
         self.model.to("cuda:0")
         self.tokenizer = AutoTokenizer.from_pretrained("codellama/CodeLlama-13b-Instruct-hf")
     
