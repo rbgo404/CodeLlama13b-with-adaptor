@@ -13,9 +13,9 @@ class InferlessPythonModel:
     
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        batch = tokenizer(prompt, return_tensors='pt').to("cuda:0")
-        output_tokens = model.generate(**batch, max_new_tokens=50)
-        output = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+        batch = self.tokenizer(prompt, return_tensors='pt').to("cuda:0")
+        output_tokens = self.model.generate(**batch, max_new_tokens=50)
+        output = self.tokenizer.decode(output_tokens[0], skip_special_tokens=True)
         return {"generated_output": output}
 
     def finalize(self,args):
