@@ -1,4 +1,4 @@
-# CodeLlama13b
+# CodeLlama13b with PEFT
 
 Code Llama is a collection of pretrained and fine-tuned generative text models ranging in scale from 7 billion to 34 billion parameters. In this template we will be importing this in Inferless Platform.
 
