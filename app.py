@@ -18,6 +18,5 @@ class InferlessPythonModel:
         output = self.tokenizer.decode(output_tokens[0], skip_special_tokens=True)
         return {"generated_output": output}
 
-    def finalize(self,args):
+    def finalize(self):
         self.model = None
-        self.tokenizer = None
